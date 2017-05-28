@@ -11,7 +11,7 @@ target_compile_features(CallgraphPass PRIVATE cxx_range_for cxx_auto_type)
 set_target_properties(CallgraphPass PROPERTIES
     COMPILE_FLAGS "-fno-rtti "
 )
-
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DNDEBUG")
 # Get proper shared-library behavior (where symbols are not necessarily
 # resolved when the shared library is linked) on OS X.
 if(APPLE)
